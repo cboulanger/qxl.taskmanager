@@ -1,0 +1,36 @@
+{
+ "$schema": "https://qooxdoo.org/schema/Manifest-1-0-0.json",
+  "info" :
+  {
+    "name" : "qxl.taskmanager",
+
+    "summary" : "A manager for objects that represent real tasks",
+    "description" : "",
+
+    "homepage" : "",
+
+    "license" : "MIT license",
+    "authors" : [
+  {
+    "name": "Christian Boulanger (cboulanger)",
+    "email": "info@bibliograph.org"
+  }
+],
+
+    "version" : "1.0.0"
+  },
+
+  "provides" :
+  {
+    "namespace"   : "qxl.taskmanager",
+    "encoding"    : "utf-8",
+    "class"       : "source/class",
+    "resource"    : "source/resource",
+    "translation" : "source/translation"
+  },
+
+  "requires": {
+    "@qooxdoo/framework": "^6.0.0-beta-20200515-0957",
+    "@qooxdoo/compiler" : "^1.0.0-beta.20200613-2032"
+  }
+}
