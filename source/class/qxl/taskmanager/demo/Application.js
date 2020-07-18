@@ -23,12 +23,6 @@ qx.Class.define("qxl.taskmanager.demo.Application",
 
   members :
   {
-    /**
-     * This method contains the initial application code and gets called
-     * during startup of the application
-     *
-     * @lint ignoreDeprecated(alert)
-     */
     main : function()
     {
       // Call super class
