@@ -1,10 +1,16 @@
 /* ************************************************************************
 
-   Copyright: 2020 Christian Boulanger
+   qxl.taskmanager
 
-   License: MIT license
+   Copyright:
+     2020 Christian Boulanger
 
-   Authors: Christian Boulanger (cboulanger) info@bibliograph.org
+   License:
+     MIT: https://opensource.org/licenses/MIT
+     See the LICENSE file in the project's top-level directory for details.
+
+   Authors:
+     * Christian Boulanger (cboulanger)
 
 ************************************************************************ */
 
@@ -14,13 +20,6 @@
 qx.Class.define("qxl.taskmanager.demo.Application",
 {
   extend : qx.application.Standalone,
-
-  /*
-  *****************************************************************************
-     MEMBERS
-  *****************************************************************************
-  */
-
   members :
   {
     main : function()
@@ -43,9 +42,14 @@ qx.Class.define("qxl.taskmanager.demo.Application",
       // create UI
       const container = new qx.ui.container.Composite(new qx.ui.layout.VBox(5));
       container.set({width:300});
-      const title = (new qx.ui.basic.Label()).set({rich:true});
-      const libInfo = qx.$$environment["qx.libraryInfoMap"]["qxl.taskmanager"];
-      title.setValue(`<h1>${libInfo.name}</h1><p>${libInfo.description}</p>`);
+      let title = (new qx.ui.basic.Label()).set({rich:true});
+      let libInfo = qx.$$environment["qx.libraryInfoMap"]["qxl.taskmanager"];
+      let sourcePath = "tree/master/source/class/qxl/taskmanager/demo/";
+      title.setValue(`<h1>${libInfo.name}</h1>
+        <p>${libInfo.description}</p>
+        <p>The source code of this demo can be found
+          <a target="_blank" href="${libInfo.homepage}/${sourcePath}">here.</a>
+        </p>`);
       container.add(title);
       const managerUi = (new qxl.taskmanager.demo.Manager(manager)).set({height: 500});
       container.add(managerUi, {flex:1});
@@ -56,7 +60,7 @@ qx.Class.define("qxl.taskmanager.demo.Application",
        * @param {String} name Name of the task, description in UI
        * @param {Number} duration Duration of task in seconds
        * @param {Boolean} showProgress Whether to show a progressbar (0-100)
-       * @return {Promise<unknown>}
+       * @return {Promise<void>}
        */
       function createTask(name, duration, showProgress=true) {
         let task = new qxl.taskmanager.Task(name);
@@ -111,7 +115,6 @@ qx.Class.define("qxl.taskmanager.demo.Application",
           await wait(1000);
         }
       })();
-
     }
   }
 });

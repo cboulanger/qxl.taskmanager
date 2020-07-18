@@ -1,3 +1,28 @@
+/* ************************************************************************
+
+   qxl.taskmanager
+
+   Copyright:
+     2020 Christian Boulanger
+
+   License:
+     MIT: https://opensource.org/licenses/MIT
+     See the LICENSE file in the project's top-level directory for details.
+
+   Authors:
+     * Christian Boulanger (cboulanger)
+
+************************************************************************ */
+
+/**
+ * A manager for {@link qxl.taskmanager.Task} objects. You can bind to the
+ * (virtual) `tasks` and `activeTasks` properties, which are {@link qx.data.Array}
+ * objects. `tasks` contains all tasks, `activeTasks` only those of which the
+ * `active` property is `true`. The manager also has the virtual properties
+ * `busy` (Boolean) and `progress` (Number) that can be bound to other qooxdoo
+ * objects. The manager is "busy" if there are active tasks, and has a "progress"
+ * value if any of the active tasks have a progress value.
+ */
 qx.Class.define("qxl.taskmanager.Manager",{
   extend: qx.core.Object,
   events: {
@@ -69,7 +94,7 @@ qx.Class.define("qxl.taskmanager.Manager",{
     },
 
     /**
-     * Add a task
+     * Adds a task
      * @param {qxl.taskmanager.Task} task
      * @return {qxl.taskmanager.Manager} Returns instance for chaining
      */
@@ -147,6 +172,10 @@ qx.Class.define("qxl.taskmanager.Manager",{
       return this.__progress;
     }
   },
+
+  /**
+   * Destructor
+   */
   destruct: function () {
     this._disposeObjects("__tasks","__activeTasks");
   }

@@ -1,4 +1,21 @@
+/* ************************************************************************
+
+   qxl.taskmanager
+
+   Copyright:
+     2020 Christian Boulanger
+
+   License:
+     MIT: https://opensource.org/licenses/MIT
+     See the LICENSE file in the project's top-level directory for details.
+
+   Authors:
+     * Christian Boulanger (cboulanger)
+
+************************************************************************ */
+
 /**
+ * The manager widget
  * @asset(qxl/taskmanager/*)
  */
 qx.Class.define("qxl.taskmanager.demo.Manager", {
@@ -65,8 +82,6 @@ qx.Class.define("qxl.taskmanager.demo.Manager", {
           controller.bindProperty("active", "enabled", {}, item, id);
         }
       };
-
-      // sets the delegate to the list
       list.setDelegate(delegate);
       list.setModel(this.__manager.getTasks());
       return list;
