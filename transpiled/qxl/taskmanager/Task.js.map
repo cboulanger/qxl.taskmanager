@@ -1,0 +1,44 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/runner/work/qxl.taskmanager/qxl.taskmanager/source/class/qxl/taskmanager/Task.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "core",
+    "Object",
+    "properties",
+    "name",
+    "check",
+    "event",
+    "active",
+    "apply",
+    "init",
+    "status",
+    "progress",
+    "value",
+    "Error",
+    "nullable",
+    "data",
+    "construct",
+    "set",
+    "members",
+    "_applyActive",
+    "setStatus",
+    "_applyStatus",
+    "setActive",
+    "qxl",
+    "taskmanager",
+    "Task"
+  ],
+  "mappings": ";;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;AAAAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,sBAAhB,EAAuC;AACrCC,IAAAA,MAAM,EAAEN,EAAE,CAACO,IAAH,CAAQC,MADqB;AAErCC,IAAAA,UAAU,EAAE;AACVC,MAAAA,IAAI,EAAE;AACJC,QAAAA,KAAK,EAAE,QADH;AAEJC,QAAAA,KAAK,EAAE;AAFH,OADI;AAKVC,MAAAA,MAAM,EAAE;AACNF,QAAAA,KAAK,EAAE,SADD;AAENG,QAAAA,KAAK,EAAE,cAFD;AAGNF,QAAAA,KAAK,EAAE,cAHD;AAING,QAAAA,IAAI,EAAE;AAJA,OALE;AAWVC,MAAAA,MAAM,EAAC;AACLL,QAAAA,KAAK,EAAE,CAAC,QAAD,EAAW,UAAX,EAAuB,SAAvB,EAAkC,MAAlC,CADF;AAELI,QAAAA,IAAI,EAAE,QAFD;AAGLD,QAAAA,KAAK,EAAE,cAHF;AAILF,QAAAA,KAAK,EAAE;AAJF,OAXG;AAiBVK,MAAAA,QAAQ,EAAE;AACRN,QAAAA,KAAK,EAAE,eAAAO,KAAK,EAAI;AACd,cAAI,CAACA,KAAK,GAAG,CAAR,IAAaA,KAAK,GAAG,GAAtB,KAA8BA,KAAK,KAAK,IAA5C,EAAkD;AAChD,kBAAM,IAAIC,KAAJ,CAAU,yCAAV,CAAN;AACD;;AACD,iBAAO,IAAP;AACD,SANO;AAORC,QAAAA,QAAQ,EAAE,IAPF;AAQRR,QAAAA,KAAK,EAAE;AARC,OAjBA;;AA2BV;;;AAGAS,MAAAA,IAAI,EAAE;AACJN,QAAAA,IAAI,EAAE,IADF;AAEJK,QAAAA,QAAQ,EAAE;AAFN;AA9BI,KAFyB;AAqCrCE,IAAAA,SAAS,EAAE,mBAASZ,IAAT,EAA0B;AAAA,UAAXW,IAAW,uEAAN,IAAM;AACnC;AACA,WAAKE,GAAL,CAAS;AAACb,QAAAA,IAAI,EAAJA,IAAD;AAAOW,QAAAA,IAAI,EAAJA;AAAP,OAAT;AACD,KAxCoC;AAyCrCG,IAAAA,OAAO,EAAE;AACPC,MAAAA,YADO,wBACMP,KADN,EACa;AAClB,aAAKQ,SAAL,CAAeR,KAAK,GAAG,QAAH,GAAa,UAAjC;AACD,OAHM;AAIPS,MAAAA,YAJO,wBAIMT,KAJN,EAIa;AAClB,aAAKU,SAAL,CAAeV,KAAK,KAAK,QAAzB;AACD;AANM;AAzC4B,GAAvC;AAAAW,EAAAA,GAAG,CAACC,WAAJ,CAAgBC,IAAhB,CAAqB5B,aAArB,GAAqCA,aAArC",
+  "sourcesContent": [
+    "qx.Class.define(\"qxl.taskmanager.Task\",{\n  extend: qx.core.Object,\n  properties: {\n    name: {\n      check: \"String\",\n      event: \"changeName\"\n    },\n    active: {\n      check: \"Boolean\",\n      apply: \"_applyActive\",\n      event: \"changeActive\",\n      init: true\n    },\n    status:{\n      check: [\"active\", \"inactive\", \"aborted\", \"done\"],\n      init: \"active\",\n      apply: \"_applyStatus\",\n      event: \"changeStatus\"\n    },\n    progress: {\n      check: value => {\n        if ((value < 0 || value > 100) && value !== null) {\n          throw new Error(\"Value must be null or between 0 and 100\");\n        }\n        return true\n      },\n      nullable: true,\n      event: \"changeProgress\"\n    },\n    /**\n     * Arbitrary additional data\n     */\n    data: {\n      init: null,\n      nullable: true\n    }\n  },\n  construct: function(name, data=null) {\n    this.base(arguments);\n    this.set({name, data});\n  },\n  members: {\n    _applyActive(value) {\n      this.setStatus(value ? \"active\": \"inactive\");\n    },\n    _applyStatus(value) {\n      this.setActive(value === \"active\");\n    }\n  }\n});\n"
+  ]
+}
