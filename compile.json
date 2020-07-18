@@ -6,7 +6,8 @@
       "outputPath": "compiled/source",
       "bundle": {
         "include": "qx.*"
-      }
+      },
+      "deployPath": "deploy"
     },
     {
       "type": "build",
