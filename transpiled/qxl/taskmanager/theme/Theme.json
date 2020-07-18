@@ -1,0 +1,50 @@
+{
+  "className": "qxl.taskmanager.theme.Theme",
+  "packageName": "qxl.taskmanager.theme",
+  "name": "Theme",
+  "superClass": null,
+  "interfaces": [],
+  "mixins": [],
+  "functionName": null,
+  "clazz": {
+    "location": {
+      "start": {
+        "line": 11,
+        "column": 0
+      },
+      "end": {
+        "line": 21,
+        "column": 3
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "<pre><code>*****************************************************************\n</code></pre>\n<p>Copyright: 2020 Christian Boulanger\n   License: MIT license\n   Authors: Christian Boulanger (cboulanger) info@bibliograph.org\n    <strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong></em>*</p>"
+        }
+      ]
+    }
+  },
+  "type": "theme",
+  "themeMeta": {
+    "location": {
+      "start": {
+        "line": 13,
+        "column": 2
+      },
+      "end": {
+        "line": 20,
+        "column": 3
+      }
+    },
+    "themeMetaMap": {
+      "color": "qxl.taskmanager.theme.Color",
+      "decoration": "qxl.taskmanager.theme.Decoration",
+      "font": "qxl.taskmanager.theme.Font",
+      "icon": "qx.theme.icon.Tango",
+      "appearance": "qxl.taskmanager.theme.Appearance"
+    }
+  },
+  "descendants": []
+}
