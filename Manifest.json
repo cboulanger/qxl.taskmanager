@@ -2,8 +2,8 @@
   "$schema": "https://qooxdoo.org/schema/Manifest-1-0-0.json",
   "info": {
     "name": "qxl.taskmanager",
-    "summary": "A manager for objects that represent real tasks",
-    "description": "",
+    "summary": "A manager for objects that represent background tasks",
+    "description": "This package provides a manager for objects representing real tasks which are running in the background of the application. The manager offers bindable properties and events that allow you to visualize the progress of the task(s) or to determine the busy/idle state of the application.",
     "homepage": "",
     "license": "MIT license",
     "authors": [

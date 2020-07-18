@@ -41,8 +41,15 @@ qx.Class.define("qxl.taskmanager.demo.Application",
       const manager = new qxl.taskmanager.Manager();
 
       // create UI
-      const managerUi = (new qxl.taskmanager.demo.Manager(manager)).set({width: 300, height: 500});
-      this.getRoot().add( managerUi, {top: 50, left: 20});
+      const container = new qx.ui.container.Composite(new qx.ui.layout.VBox(5));
+      container.set({width:300});
+      const title = (new qx.ui.basic.Label()).set({rich:true});
+      const libInfo = qx.$$environment["qx.libraryInfoMap"]["qxl.taskmanager"];
+      title.setValue(`<h1>${libInfo.name}</h1><p>${libInfo.description}</p>`);
+      container.add(title);
+      const managerUi = (new qxl.taskmanager.demo.Manager(manager)).set({height: 500});
+      container.add(managerUi, {flex:1});
+      this.getRoot().add( container, {top: 50, left: 20});
 
       /**
        * Creates a fake task that last the given duration
