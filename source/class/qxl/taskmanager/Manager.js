@@ -1,8 +1,5 @@
 qx.Class.define("qxl.taskmanager.Manager",{
   extend: qx.core.Object,
-  properties: {
-
-  },
   events: {
     /**
      * Fired when a new task is added
@@ -43,7 +40,7 @@ qx.Class.define("qxl.taskmanager.Manager",{
       let value = Boolean(this.__activeTasks.getLength());
       if (this.__busy !== value) {
         this.fireDataEvent("changeBusy", value, this.__busy);
-        this.__busy == value;
+        this.__busy = value;
       }
     },
 
@@ -60,13 +57,14 @@ qx.Class.define("qxl.taskmanager.Manager",{
           num++;
           return (acc || 0) + progress;
         }
+        return acc;
       }, null);
-      if (value !== null) {
+      if (typeof value == "number") {
         value = Math.round(value/num);
       }
       if (this.__progress !== value) {
         this.fireDataEvent("changeProgress", value, this.__progress);
-        this.__progress == value;
+        this.__progress = value;
       }
     },
 
@@ -94,6 +92,8 @@ qx.Class.define("qxl.taskmanager.Manager",{
       if (task.isActive()) {
         this.__activeTasks.push(task);
       }
+      this.__setBusy();
+      this.__setProgress();
       this.fireDataEvent("taskAdded", task);
       return this;
     },
@@ -109,6 +109,7 @@ qx.Class.define("qxl.taskmanager.Manager",{
         this.__activeTasks.remove(task);
       }
       this.__tasks.remove(task);
+      this.__setBusy();
       return task;
     },
 

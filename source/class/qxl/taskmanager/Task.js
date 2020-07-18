@@ -5,18 +5,18 @@ qx.Class.define("qxl.taskmanager.Task",{
       check: "String",
       event: "changeName"
     },
-
     active: {
       check: "Boolean",
-      apply: "_applyActive"
+      apply: "_applyActive",
+      event: "changeActive",
+      init: true
     },
-
     status:{
       check: ["active", "inactive", "aborted", "done"],
       init: "active",
-      apply: "_applyStatus"
+      apply: "_applyStatus",
+      event: "changeStatus"
     },
-
     progress: {
       check: value => {
         if ((value < 0 || value > 100) && value !== null) {
@@ -24,25 +24,27 @@ qx.Class.define("qxl.taskmanager.Task",{
         }
         return true
       },
-      nullable: true
+      nullable: true,
+      event: "changeProgress"
     },
-
+    /**
+     * Arbitrary additional data
+     */
     data: {
-      init: null
+      init: null,
+      nullable: true
     }
-
   },
-  construct: function(name){
+  construct: function(name, data=null) {
     this.base(arguments);
-
+    this.set({name, data});
   },
   members: {
     _applyActive(value) {
       this.setStatus(value ? "active": "inactive");
     },
-
     _applyStatus(value) {
-      this.setActive(status === "active");
+      this.setActive(value === "active");
     }
   }
 });
