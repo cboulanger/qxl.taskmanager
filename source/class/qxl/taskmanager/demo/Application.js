@@ -80,11 +80,11 @@ qx.Class.define("qxl.taskmanager.demo.Application",
 
       /**
        * Waits the given duration
-       * @param {Number} duration Duration in seconds
+       * @param {Number} ms Duration in milliseconds
        * @return {Promise<unknown>}
        */
-      function wait(duration) {
-        return new Promise(resolve => qx.event.Timer.once(resolve,null,duration*1000));
+      function wait(ms) {
+        return new Promise(resolve => qx.event.Timer.once(resolve,null,ms));
       }
 
       // run some random "tasks"
@@ -104,9 +104,10 @@ qx.Class.define("qxl.taskmanager.demo.Application",
               ? `Progressing task #${i}, Duration: ${duration} seconds.`
               : `Blocking Task #${i}, Duration: ${duration} seconds.`;
             promises.push(createTask(label, duration, showProgress));
+            await wait(Math.round(Math.random()*1000));
           }
           await Promise.all(promises);
-          await wait(1);
+          await wait(1000);
         }
       })();
 
