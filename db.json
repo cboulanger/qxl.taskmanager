@@ -7,7 +7,7 @@
   "compilerVersion": "1.0.0-beta.20200613-2032",
   "classInfo": {
     "qxl.taskmanager.demo.Application": {
-      "mtime": "2020-07-18T20:34:27.888Z",
+      "mtime": "2020-07-22T21:32:55.593Z",
       "libraryName": "qxl.taskmanager",
       "dependsOn": {
         "qx.Class": {
@@ -31,7 +31,7 @@
       "hasDefer": null
     },
     "qxl.taskmanager.theme.Theme": {
-      "mtime": "2020-07-18T20:34:27.888Z",
+      "mtime": "2020-07-22T21:32:55.593Z",
       "libraryName": "qxl.taskmanager",
       "dependsOn": {
         "qx.Theme": {
@@ -146,7 +146,7 @@
       "hasDefer": null
     },
     "qxl.taskmanager.Manager": {
-      "mtime": "2020-07-18T20:34:27.888Z",
+      "mtime": "2020-07-22T21:32:55.593Z",
       "libraryName": "qxl.taskmanager",
       "dependsOn": {
         "qx.Class": {
@@ -293,7 +293,7 @@
       "hasDefer": null
     },
     "qxl.taskmanager.demo.Manager": {
-      "mtime": "2020-07-18T20:34:27.888Z",
+      "mtime": "2020-07-22T21:32:55.593Z",
       "libraryName": "qxl.taskmanager",
       "dependsOn": {
         "qx.Class": {
@@ -324,7 +324,7 @@
       ]
     },
     "qxl.taskmanager.Task": {
-      "mtime": "2020-07-18T20:34:27.888Z",
+      "mtime": "2020-07-22T21:32:55.593Z",
       "libraryName": "qxl.taskmanager",
       "dependsOn": {
         "qx.Class": {
@@ -383,7 +383,7 @@
       "hasDefer": null
     },
     "qxl.taskmanager.theme.Color": {
-      "mtime": "2020-07-18T20:34:27.888Z",
+      "mtime": "2020-07-22T21:32:55.593Z",
       "libraryName": "qxl.taskmanager",
       "dependsOn": {
         "qx.Theme": {
@@ -400,7 +400,7 @@
       "hasDefer": null
     },
     "qxl.taskmanager.theme.Decoration": {
-      "mtime": "2020-07-18T20:34:27.888Z",
+      "mtime": "2020-07-22T21:32:55.593Z",
       "libraryName": "qxl.taskmanager",
       "dependsOn": {
         "qx.Theme": {
@@ -417,7 +417,7 @@
       "hasDefer": null
     },
     "qxl.taskmanager.theme.Font": {
-      "mtime": "2020-07-18T20:34:27.888Z",
+      "mtime": "2020-07-22T21:32:55.593Z",
       "libraryName": "qxl.taskmanager",
       "dependsOn": {
         "qx.Theme": {
@@ -451,7 +451,7 @@
       }
     },
     "qxl.taskmanager.theme.Appearance": {
-      "mtime": "2020-07-18T20:34:27.888Z",
+      "mtime": "2020-07-22T21:32:55.593Z",
       "libraryName": "qxl.taskmanager",
       "dependsOn": {
         "qx.Theme": {

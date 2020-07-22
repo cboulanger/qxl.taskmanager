@@ -28,4 +28,4 @@
   qxl.taskmanager.theme.Font.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Font.js.map?dt=1595104500251
+//# sourceMappingURL=Font.js.map?dt=1595453604300

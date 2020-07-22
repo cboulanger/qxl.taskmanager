@@ -210,4 +210,4 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   qxl.taskmanager.demo.Application.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Application.js.map?dt=1595104499168
+//# sourceMappingURL=Application.js.map?dt=1595453603188

@@ -340,4 +340,4 @@
   qx.bom.Label.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Label.js.map?dt=1595104502818
+//# sourceMappingURL=Label.js.map?dt=1595453606996

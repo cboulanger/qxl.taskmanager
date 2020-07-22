@@ -13,7 +13,7 @@
         "column": 0
       },
       "end": {
-        "line": 93,
+        "line": 125,
         "column": 3
       }
     },
@@ -197,14 +197,60 @@
       }
     }
   },
+  "events": {
+    "abort": {
+      "location": {
+        "start": {
+          "line": 79,
+          "column": 4
+        },
+        "end": {
+          "line": 79,
+          "column": 35
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "<p>Fired when the task is aborted by calling the {@link #abort} method.</p>"
+          }
+        ]
+      },
+      "name": "abort",
+      "type": "qx.event.type.Event"
+    },
+    "done": {
+      "location": {
+        "start": {
+          "line": 84,
+          "column": 4
+        },
+        "end": {
+          "line": 84,
+          "column": 34
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "<p>Fired when the task is marked as done by calling the {@link #done} method.</p>"
+          }
+        ]
+      },
+      "name": "done",
+      "type": "qx.event.type.Event"
+    }
+  },
   "construct": {
     "location": {
       "start": {
-        "line": 80,
+        "line": 92,
         "column": 13
       },
       "end": {
-        "line": 83,
+        "line": 95,
         "column": 3
       }
     },
@@ -231,11 +277,11 @@
     "_applyActive": {
       "location": {
         "start": {
-          "line": 86,
+          "line": 98,
           "column": 4
         },
         "end": {
-          "line": 88,
+          "line": 100,
           "column": 5
         }
       },
@@ -248,11 +294,11 @@
     "_applyStatus": {
       "location": {
         "start": {
-          "line": 89,
+          "line": 101,
           "column": 4
         },
         "end": {
-          "line": 91,
+          "line": 103,
           "column": 5
         }
       },
@@ -261,6 +307,50 @@
       "applyFor": [
         "status"
       ]
+    },
+    "abort": {
+      "location": {
+        "start": {
+          "line": 111,
+          "column": 4
+        },
+        "end": {
+          "line": 114,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "<p>Fires the \"abort\" event on the instance and sets the status of the task\n to \"aborted\". Note that it is the responsibility of the application\n to listen to this event (or, alternatively, to the \"changeStatus\"\n event) and abort the \"real\" task that this instance represents.</p>"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "done": {
+      "location": {
+        "start": {
+          "line": 120,
+          "column": 4
+        },
+        "end": {
+          "line": 123,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "<p>Fires the \"done\" event on the instance and sets the status of the task\n to \"done\".</p>"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
     },
     "bind": {
       "type": "function",
