@@ -144,4 +144,4 @@
   qxl.taskmanager.Task.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Task.js.map?dt=1595453604083
+//# sourceMappingURL=Task.js.map?dt=1595453714199

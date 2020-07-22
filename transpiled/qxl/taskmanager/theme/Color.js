@@ -28,4 +28,4 @@
   qxl.taskmanager.theme.Color.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Color.js.map?dt=1595453604261
+//# sourceMappingURL=Color.js.map?dt=1595453714348
