@@ -72,6 +72,18 @@ qx.Class.define("qxl.taskmanager.Task",{
     }
   },
 
+  events: {
+    /**
+     * Fired when the task is aborted by calling the {@link #abort} method.
+     */
+    "abort" : "qx.event.type.Event",
+
+    /**
+     * Fired when the task is marked as done by calling the {@link #done} method.
+     */
+    "done" : "qx.event.type.Event",
+  },
+
   /**
    * Constructor
    * @param {String} name
@@ -88,6 +100,26 @@ qx.Class.define("qxl.taskmanager.Task",{
     },
     _applyStatus(value) {
       this.setActive(value === "active");
+    },
+
+    /**
+     * Fires the "abort" event on the instance and sets the status of the task
+     * to "aborted". Note that it is the responsibility of the application
+     * to listen to this event (or, alternatively, to the "changeStatus"
+     * event) and abort the "real" task that this instance represents.
+     */
+    abort() {
+      this.fireEvent("aborted");
+      this.setStatus("aborted");
+    },
+
+    /**
+     * Fires the "done" event on the instance and sets the status of the task
+     * to "done".
+     */
+    done() {
+      this.fireEvent("done");
+      this.setStatus("done");
     }
   }
 });
